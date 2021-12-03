@@ -1,23 +1,1271 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/"/>
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/%E5%86%B3%E7%AD%96%E6%A0%91%E5%8E%9F%E7%90%86%E6%8E%A8%E5%AF%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/12/02/%E5%86%B3%E7%AD%96%E6%A0%91%E5%8E%9F%E7%90%86%E6%8E%A8%E5%AF%BC/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T23:14:56+08:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="决策树原理推导"><a href="#决策树原理推导" class="headerlink" title="决策树原理推导"></a>决策树原理推导</h1><h2 id="划分结点原理"><a href="#划分结点原理" class="headerlink" title="划分结点原理"></a>划分结点原理</h2><ol>
+<li><p>首先会定义一个熵，用来描述混乱度的即分类后纯不纯的问题，熵的定义如下：<br>$$<br>\operatorname{Ent}(D)=-\sum_{k=1}^{|\mathcal{Y}|} p_{k} \log <em>{2} p</em>{k}<br>$$</p>
+</li>
+<li><p>对于ID3算法来说，划分的依据是判断下一个结点的信息增益谁大谁就将成为下一个结点，信息增益的判断如下:<br>$$<br>\operatorname{Gain}(D, a)=\operatorname{Ent}(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right)<br>$$</p>
+</li>
+<li><p>对于C4.5算法来说，划分的依据是根据信息增益率来判断的，选择时先从候选划分属性中找出信息增益高于平均水平的属性，再从中选择增益率最高的。信息增益率定义如下：<br>$$<br>\operatorname{Gain_ratio}{}(D, a)=\frac{\operatorname{Gain}(D, a)}{\operatorname{IV}(a)}<br>$$<br>其中：<br>$$<br>\operatorname{IV}(a)=-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \log _{2} \frac{\left|D^{v}\right|}{|D|}<br>$$</p>
+</li>
+<li><p>对于CART算法来说，划分结点是根据Gini指数来的，一个数据集的纯度可以用基尼值来度量，基尼值的定义如下：<br>$$<br>\begin{aligned}<br>\operatorname{Gini}(D) &amp;=\sum_{k=1}^{|\mathcal{Y}|} \sum_{k^{\prime} \neq k} p_{k} p_{k^{\prime}} \<br>&amp;=1-\sum_{k=1}^{|\mathcal{Y}|} p_{k}^{2}<br>\end{aligned}<br>$$<br>Gini值越小则表明数据集的纯度越高，属性a的基尼指数定义为：<br>$$<br>\operatorname{Gini_index}(D,a)=\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Gini(D^v)<br>$$<br>于是在候选的属性集合A中，选择划分后Gini指数最小的属性作为最优划分属性，即$a_{*}=\underset{a \in A}{\arg \min } \text { Gini_index }(D, a)$</p>
+</li>
+</ol>
+<h2 id="剪枝操作"><a href="#剪枝操作" class="headerlink" title="剪枝操作"></a>剪枝操作</h2><p>剪枝的基本策略有“预剪枝”和“后剪枝”:</p>
+<ol>
+<li>预剪枝是指在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点，一般有限制深度和限制叶子结点数两种操作。</li>
+<li>后剪枝则是先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点，一般操作有判段剪枝后的结果和未剪枝的结果，来判断是否需要剪枝。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LDA(%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/12/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LDA(%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95)/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T23:14:56+08:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="机器学习-LDA-线性判别降维算法"><a href="#机器学习-LDA-线性判别降维算法" class="headerlink" title="机器学习-LDA(线性判别降维算法)"></a>机器学习-LDA(线性判别降维算法)</h1><h2 id="介绍LDA"><a href="#介绍LDA" class="headerlink" title="介绍LDA"></a>介绍LDA</h2><ul>
+<li>LDA模型实现基本思想是和PCA相同的，都是向低维空间做投影,对数据进行一个降维操作。LDA的思想可以用一句话概括，就是“投影后类内方差最小，类间方差最大”。什么意思呢？ 我们要将数据在低维度上进行投影，投影后希望每一种类别数据的投影点尽可能的接近，而不同类别的数据的类别中心之间的距离尽可能的大。</li>
+</ul>
+<h2 id="PCA与LDA的区别"><a href="#PCA与LDA的区别" class="headerlink" title="PCA与LDA的区别"></a>PCA与LDA的区别</h2><ul>
+<li><p>两者降维的约束条件不同。</p>
+</li>
+<li><p>PCA属于方差最大化理论，需要数据尽可能分散，才不会在降维时丢失数据特征。</p>
+</li>
+<li><p>LDA算法的思想是将数据投影到低维空间之后，使得同一类数据尽可能的紧凑，不同类的数据尽可能分散。</p>
+</li>
+<li><p>PCA是一种无监督的数据降维方法，与之不同的是LDA是一种有监督的数据降维方法。我们知道即使在训练样本上，我们提供了类别标签，在使用PCA模型的时候，我们是不利用类别标签的，而LDA在进行数据降维的时候是利用数据的类别标签提供的信息的。</p>
+</li>
+<li><p>LDA降维最多降到类别数k-1的维数，而PCA没有这个限制。</p>
+</li>
+<li><p>LDA除了可以用于降维，还可以用于分类。</p>
+</li>
+<li><p>LDA选择分类性能最好的投影方向，而PCA选择样本点投影具有最大方差的方向。</p>
+</li>
+<li><p><img src="https://pic1.zhimg.com/80/v2-c55ffbfe15604f9d0ae16dad0d6f028c_720w.jpg" alt="img "></p>
+<p>原始数据主要是根据均值来划分的，此时LDA降维效果很好，但是PCA效果就很差。</p>
+</li>
+<li><p><img src="https://pic1.zhimg.com/80/v2-7707c6e83f977d69502feb7c894baf20_1440w.jpg" alt="img"></p>
+<p>类数据主要区别是方差不同，因此此时PCA降维效果比较好，而LDA降维效果比较差。</p>
+</li>
+</ul>
+<h2 id="LDA与PCA的相同点"><a href="#LDA与PCA的相同点" class="headerlink" title="LDA与PCA的相同点"></a>LDA与PCA的相同点</h2><ul>
+<li>两者均可以对数据进行降维。</li>
+<li>两者在降维时均使用了矩阵特征分解的思想。</li>
+<li>两者都假设数据符合高斯分布。</li>
+</ul>
+<h2 id="LDA的特征"><a href="#LDA的特征" class="headerlink" title="LDA的特征"></a>LDA的特征</h2><ul>
+<li><p>原始数据根据样本均值进行分类，数据主要是由均值来区分的时候，LDA一般都可以取得很好的效果。</p>
+</li>
+<li><p>将原始数据投影至低维空间，尽量使同一类的数据聚集，不同类的数据尽可能分散。</p>
+</li>
+<li><p>LDA降维的目标：将带有标签的数据降维，投影到低维空间同时满足三个条件：</p>
+<blockquote>
+<ul>
+<li>尽可能多地保留数据样本的信息（即选择最大的特征是对应的特征向量所代表的的方向）。</li>
+<li>寻找使样本尽可能好分的最佳投影方向。</li>
+<li>投影后使得同类样本尽可能近，不同类样本尽可能远。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="LDA算法流程"><a href="#LDA算法流程" class="headerlink" title="LDA算法流程"></a>LDA算法流程</h2><ol>
+<li><p>计算类内散度矩阵<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222720220.png" alt="image-20211125222720220"></p>
+</li>
+<li><p>计算类间散度矩阵<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222737063.png" alt="image-20211125222737063"></p>
+</li>
+<li><p>计算矩阵<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222747831.png" alt="image-20211125222747831"></p>
+</li>
+<li><p>计算<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222747831.png" alt="image-20211125222747831">的最大的d个特征值和对应的d个特征向量<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222841241.png" alt="image-20211125222841241">，到投影矩阵W</p>
+</li>
+<li><p>对样本集中的每一个样本特征xi,转化为新的样本zi=<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125222932949.png" alt="image-20211125222932949"></p>
+</li>
+<li><p>得到输出样本集<img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211125223006383.png" alt="image-20211125223006383"></p>
+</li>
+</ol>
+<h2 id="LDA分类运用"><a href="#LDA分类运用" class="headerlink" title="LDA分类运用"></a>LDA分类运用</h2><ul>
+<li>实际上LDA除了可以用于降维以外，还可以用于分类。一个常见的LDA分类基本思想是假设各个类别的样本数据符合高斯分布，这样利用LDA进行投影后，可以利用极大似然估计计算各个类别投影数据的均值和方差，进而得到该类别高斯分布的概率密度函数。当一个新的样本到来后，我们可以将它投影，然后将投影后的样本特征分别带入各个类别的高斯分布概率密度函数，计算它属于这个类别的概率，最大的概率对应的类别即为预测类别。</li>
+</ul>
+<h2 id="LDA的实现"><a href="#LDA的实现" class="headerlink" title="LDA的实现"></a>LDA的实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</span><br><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shuffle_data</span>(<span class="params">X, y, seed=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> seed:</span><br><span class="line">        np.random.seed(seed)</span><br><span class="line">    idx = np.arange(X.shape[<span class="number">0</span>])</span><br><span class="line">    np.random.shuffle(idx)</span><br><span class="line">    <span class="keyword">return</span> X[idx], y[idx]</span><br><span class="line"><span class="comment"># 正规化数据集 X</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">X, axis=-<span class="number">1</span>, p=<span class="number">2</span></span>):</span></span><br><span class="line">    lp_norm = np.atleast_1d(np.linalg.norm(X, p, axis))</span><br><span class="line">    lp_norm[lp_norm == <span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> X / np.expand_dims(lp_norm, axis)</span><br><span class="line"><span class="comment"># 标准化数据集 X</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">standardize</span>(<span class="params">X</span>):</span></span><br><span class="line">    X_std = np.zeros(X.shape)</span><br><span class="line">    mean = X.mean(axis=<span class="number">0</span>)</span><br><span class="line">    std = X.std(axis=<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># 做除法运算时请永远记住分母不能等于0的情形</span></span><br><span class="line">    <span class="comment"># X_std = (X - X.mean(axis=0)) / X.std(axis=0) </span></span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> <span class="built_in">range</span>(np.shape(X)[<span class="number">1</span>]):</span><br><span class="line">        <span class="keyword">if</span> std[col]:</span><br><span class="line">            X_std[:, col] = (X_std[:, col] - mean[col]) / std[col]</span><br><span class="line">    <span class="keyword">return</span> X_std</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分数据集为训练集和测试集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_test_split</span>(<span class="params">X, y, test_size=<span class="number">0.2</span>, shuffle=<span class="literal">True</span>, seed=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> shuffle:</span><br><span class="line">        X, y = shuffle_data(X, y, seed)</span><br><span class="line">    n_train_samples = <span class="built_in">int</span>(X.shape[<span class="number">0</span>] * (<span class="number">1</span>-test_size))</span><br><span class="line">    x_train, x_test = X[:n_train_samples], X[n_train_samples:]</span><br><span class="line">    y_train, y_test = y[:n_train_samples], y[n_train_samples:]</span><br><span class="line">    <span class="keyword">return</span> x_train, x_test, y_train, y_test</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accuracy</span>(<span class="params">y, y_pred</span>):</span></span><br><span class="line">    y = y.reshape(y.shape[<span class="number">0</span>], -<span class="number">1</span>)</span><br><span class="line">    y_pred = y_pred.reshape(y_pred.shape[<span class="number">0</span>], -<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">sum</span>(y == y_pred)/<span class="built_in">len</span>(y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算矩阵X的协方差矩阵</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate_covariance_matrix</span>(<span class="params">X, Y=np.empty(<span class="params">(<span class="params"><span class="number">0</span>,<span class="number">0</span></span>)</span>)</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> Y.<span class="built_in">any</span>():</span><br><span class="line">        Y = X</span><br><span class="line">    n_samples = np.shape(X)[<span class="number">0</span>]</span><br><span class="line">    covariance_matrix = (<span class="number">1</span> / (n_samples-<span class="number">1</span>)) * (X - X.mean(axis=<span class="number">0</span>)).T.dot(Y - Y.mean(axis=<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> np.array(covariance_matrix, dtype=<span class="built_in">float</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MultiClassLDA</span>():</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    线性判别分析分类算法(Linear Discriminant Analysis classifier). 既可以用来分类也可以用来降维.</span></span><br><span class="line"><span class="string">    此处实现二类情形(二类情形分类).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Parameters:</span></span><br><span class="line"><span class="string">    -----------</span></span><br><span class="line"><span class="string">    solver: str</span></span><br><span class="line"><span class="string">        若 solver = &#x27;svd&#x27;,  则使用SVD(奇异值分解)方法求解矩阵伪逆; 否则直接求解矩阵的逆.</span></span><br><span class="line"><span class="string">    eigen_values: </span></span><br><span class="line"><span class="string">        矩阵SW^(-1).dot(SB)的特征值.</span></span><br><span class="line"><span class="string">    eigen_vectors:</span></span><br><span class="line"><span class="string">        矩阵SW^(-1).dot(SB)的特征值所对应的特征向量.</span></span><br><span class="line"><span class="string">    k: int</span></span><br><span class="line"><span class="string">        投影空间(低维空间)的维度.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, solver=<span class="string">&quot;svd&quot;</span></span>):</span></span><br><span class="line">        self.solver = solver</span><br><span class="line">        self.eigen_values = <span class="literal">None</span></span><br><span class="line">        self.eigen_vectors = <span class="literal">None</span></span><br><span class="line">        self.k = <span class="number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">calculate_scatter_matrices</span>(<span class="params">self, X, y</span>):</span></span><br><span class="line">        n_features = np.shape(X)[<span class="number">1</span>]</span><br><span class="line">        labels = np.unique(y)</span><br><span class="line">        <span class="comment"># 计算类内散布矩阵:SW = sum&#123;sum&#123;(Xi^(k) - Xi_mean).dot((Xi^(k) - Xi_mean).T)&#125;for k&#125;for i</span></span><br><span class="line">        <span class="comment"># 和类间散布矩阵: SB = sum&#123; ni * (Xi_mean - X_mean).dot((Xi_mean - X_mean).T) &#125;</span></span><br><span class="line">        SW = np.empty((n_features, n_features))</span><br><span class="line">        SB = np.empty((n_features, n_features))</span><br><span class="line">        X_mean = X.mean(axis=<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">for</span> label <span class="keyword">in</span> labels:</span><br><span class="line">            Xi = X[y == label]</span><br><span class="line">            SW = SW + (Xi.shape[<span class="number">0</span>] - <span class="number">1</span>) * calculate_covariance_matrix(Xi)</span><br><span class="line">            Xi_mean = Xi.mean(axis=<span class="number">0</span>)</span><br><span class="line">            SB = SB + Xi.shape[<span class="number">0</span>] * (Xi_mean - X_mean).dot((Xi_mean - X_mean).T)</span><br><span class="line">        <span class="keyword">return</span> SW, SB</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">transform</span>(<span class="params">self, X, y</span>):</span></span><br><span class="line">        SW, SB = self.calculate_scatter_matrices(X, y)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 使用SVD(奇异值分解)求解SW伪逆.</span></span><br><span class="line">        <span class="keyword">if</span> self.solver == <span class="string">&quot;svd&quot;</span>:</span><br><span class="line">            <span class="comment"># Calculate SW^-1 * SB by SVD (pseudoinverse of diagonal matrix S)</span></span><br><span class="line">            U, S, V = np.linalg.svd(SW)</span><br><span class="line">            S = np.diag(S)</span><br><span class="line">            SW_inverse = V.dot(np.linalg.pinv(S)).dot(U.T)</span><br><span class="line">            A = SW_inverse.dot(SB)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 直接求解矩阵SW的逆矩阵.</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            A = np.linalg.inv(SW).dot(SB)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 求解矩阵A的特征值和对应的特征向量</span></span><br><span class="line">        self.eigen_values, self.eigen_vectors = np.linalg.eigh(A)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 将特征值按照其绝对值从大到小进行排序(因为SW, SB是对称阵, 故A也是对称阵, </span></span><br><span class="line">        <span class="comment"># 因此A的特征值是非负的), 取其前k个特征值以及对应的k个特征向量</span></span><br><span class="line">        idx = self.eigen_values.argsort()[::-<span class="number">1</span>]</span><br><span class="line">        topk_eigen_values = self.eigen_values[idx][:self.k]</span><br><span class="line">        topk_eigen_vectors = self.eigen_vectors[:, idx][:, :self.k]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 将样本投影到低维空间</span></span><br><span class="line">        X_transformed = X.dot(topk_eigen_vectors)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> X_transformed</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Plot the dataset X and the corresponding labels y in 2D using the LDA</span></span><br><span class="line">    <span class="comment"># transformation.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">visualization</span>(<span class="params">self, X, y, title=<span class="literal">None</span></span>):</span></span><br><span class="line">        X_transformed = self.transform(X, y)</span><br><span class="line">        x1 = X_transformed[:, <span class="number">0</span>]</span><br><span class="line">        x2 = X_transformed[:, <span class="number">1</span>]</span><br><span class="line">        plt.scatter(x1, x2, c=y)</span><br><span class="line">        <span class="keyword">if</span> title: </span><br><span class="line">            plt.title(title)</span><br><span class="line">        plt.show()</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Load the dataset</span></span><br><span class="line">    data = datasets.load_iris()</span><br><span class="line">    X = normalize(data.data)</span><br><span class="line">    y = data.target</span><br><span class="line">    <span class="comment"># Project the data onto the 2 primary components</span></span><br><span class="line">    multi_class_lda = MultiClassLDA()</span><br><span class="line">    multi_class_lda.visualization(X, y, title=<span class="string">&quot;LDA&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/12/02/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T23:14:56+08:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SVM原理及代码"><a href="#SVM原理及代码" class="headerlink" title="SVM原理及代码"></a>SVM原理及代码</h1><h2 id="先复习一下感知机"><a href="#先复习一下感知机" class="headerlink" title="先复习一下感知机"></a>先复习一下感知机</h2><ul>
+<li><p>感知机的模型就是尝试找到一条直线，能够把二元数据隔离开。放到三维空间或者更高维的空间，感知机的模型就是尝试找到一个超平面，能够把所有的二元类别隔离开。</p>
+</li>
+<li><p><img src="https://images2015.cnblogs.com/blog/1042406/201611/1042406-20161124135616081-623185925.jpg" alt="img"></p>
+<p>我们需要找到最优的$w^Tx+b=0$使得该超平面分隔数据。</p>
+</li>
+<li><p>定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)/||w||_2$</p>
+<p>固定$||w||<em>2 = 1$最终感知机的模型损失函数为：$\sum</em>{xi∈M}^{} −y(i)(w^T x(i)+b)$</p>
+<p>优化上面的损失函数就可以找到最优的超平面来分隔开数据。</p>
+</li>
+</ul>
+<h2 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h2><ul>
+<li><p>我们可以让离超平面比较近的点尽可能的远离超平面，最大化几何间隔，那么我们的分类效果会更好一些，SVM的思想起源正起于此。</p>
+</li>
+<li><p><img src="https://images2015.cnblogs.com/blog/1042406/201611/1042406-20161124144326487-1331861308.jpg" alt="img"></p>
+<p>分离超平面为$w^T x+b=0$，如果所有的样本不光可以被超平面分开，还和超平面保持一定的函数距离（上图函数距离为1），那么这样的分类超平面是比感知机的分类超平面优的。</p>
+<p>支持向量到超平面的距离为$\frac{1}{||w||_2} $,两个支持向量之间的距离为$\frac{2}{||w||_2} $。</p>
+</li>
+</ul>
+<h2 id="SVM模型目标函数与优化"><a href="#SVM模型目标函数与优化" class="headerlink" title="SVM模型目标函数与优化"></a>SVM模型目标函数与优化</h2><p>$$<br>\begin{aligned}<br>\max <em>{\boldsymbol{w}, b} &amp; \frac{2}{|\boldsymbol{w}|} \<br>\text { s.t. } &amp; y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{aligned}<br>$$</p>
+<p>上式就是我们要求解的最大化间隔的约束条件和公式，显然，为了最大化间隔隔，仅需最大化$|\boldsymbol{w}|^{-1}$ ，这等价于最小化$|\boldsymbol{w}|^{2}$，于是上式可以重写为：<br>$$<br>\begin{array}{l}<br>\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^{2} \<br>\text { s.t. } y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>这就是支持向量机的基本型。</p>
+<p>使用拉格朗日乘子法可得到其”对偶问题” (dual problem).具体来说，对上式的每条约束添加拉格朗日乘子$\alpha_{i} \geqslant 0$，则该问题的拉格朗日函数可写为：<br>$$<br>L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}|\boldsymbol{w}|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}<em>{i}+b\right)\right)<br>$$<br>其中$\boldsymbol{\alpha}=\left(\alpha</em>{1} ; \alpha_{2} ; \ldots ; \alpha_{m}\right)$，令$L(w,b,\boldsymbol{\alpha})$对$w$和$b$的偏导为零可得：<br>$$<br>\begin{aligned}<br>\boldsymbol{w} &amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}<em>{i} \<br>0 &amp;=\sum</em>{i=1}^{m} \alpha_{i} y_{i}<br>\end{aligned}<br>$$<br>再将上式代入该问题的拉格朗日函数可以得到SVM基本型的对偶问题：<br>$$<br>\begin{array}{l}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} \<br>\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \<br>\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .<br>\end{array}<br>$$<br>用SMO算法解出$\boldsymbol{\alpha}$后，求出$w$和$b$即可得到模型<br>$$<br>\begin{aligned}<br>f(\boldsymbol{x}) &amp;=\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}+b \<br>&amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}+b<br>\end{aligned}<br>$$<br>上述过程要满足上 KKT(Karush-Kuhn-Tucker) 条件，即要求：<br>$$<br>\left{\begin{array}{l}<br>\alpha</em>{i} \geqslant 0 \<br>y_{i} f\left(\boldsymbol{x}<em>{i}\right)-1 \geqslant 0 \<br>\alpha</em>{i}\left(y_{i} f\left(\boldsymbol{x}_{i}\right)-1\right)=0<br>\end{array}\right.<br>$$</p>
+<p>求解的过程复杂繁琐，为了节省时间，人们通过利用问题本身的特性，提出了很多高效算法， SMO (Sequential Minimal Optimization) 是其中一个著名的代表</p>
+<ul>
+<li><p>SMO 的基本思路是先固定$\alpha_{i}$之外的所有参数，然后求$\alpha_{i}$上的极值。由于存在约束$\sum_{i=1}^{m} \alpha_{i} y_{i}=0$，若固定$\alpha_{i}$之外的其他变量，则$\alpha_{i}$可由其他变量导出。于是SMO每次选择两个变量$\alpha_{i}$和$\alpha_{j}$，并固定其他参数，这样在参数初始化后不断执行如下两个步骤直至收敛：</p>
+<ol>
+<li><p>选取一对需要更新的变量$\alpha_{i}$和$\alpha_{j}$，为什么选两个因为他们之间仍然存在关系可以代换，于是n个参数的更新就可以退化为求解一个参数更新两个函数的问题。</p>
+</li>
+<li><p>固定$\alpha_{i}$和$\alpha_{j}$以外的函数，继续求解：<br>$$<br>\begin{array}{l}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} \<br>\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \<br>\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .<br>\end{array}<br>$$</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>SMO算法之所以高效，是由于在固定其他参数后，仅优化两个参数的过程能做到非常高效，具体来说，仅考虑$\alpha_{i}$和$\alpha_{j}$时上式可以重写为$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c, \quad \alpha_{i} \geqslant 0, \quad \alpha_{j} \geqslant 0$</p>
+<p>其中$c=-\sum_{k \neq i, j} \alpha_{k} y_{k}$是使得$\sum_{i=1}^{m} \alpha_{i} y_{i}=0$成立的常数，用$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c$消去$\alpha_{j}$，则可以得到一个关于$\alpha_{i}$的单变量二次规划问题，仅有的约束是$\alpha_{i} \geqslant 0$,很容易发现这样的二次规划问题具有闭式解，于是不必调用数值优化算法即可高效的计算出更新后的$\alpha_{i}$和$\alpha_{j}$</p>
+<p>关于确定偏移项$b$，要知对于任意的支持向量$(x_s,y_s)$都有$y_sf(x_s)=1$即：<br>$$<br>y_{s}\left(\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{s}+b\right)=1<br>$$<br>其中$S=\left{i \mid \alpha_{i}&gt;0, i=1,2, \ldots, m\right}$为所有支持向量的下标集，理论上，可选取任意支持向量求解上式来获得b，但实际上有一种更优的方法:也就是使用所有支持向量求解的平均值<br>$$<br>b=\frac{1}{|S|} \sum_{s \in S}\left(y_{s}-\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{s}\right)<br>$$</p>
+<h2 id="SVM的法宝——核函数"><a href="#SVM的法宝——核函数" class="headerlink" title="SVM的法宝——核函数"></a>SVM的法宝——核函数</h2><p>在本章前面的讨论中，我们假设训练样本是线性可分的，即存在一个划分超平面能将训练样本正确分类。然而在现实任务中，原始样本空间内也许并不存在一个能正确划分两类样本的超平面。例如图 6.3 中的“异或“问题就不是线性可分的。</p>
+<p><img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211127212844440.png" alt="image-20211127212844440"></p>
+<p>这样可以将样本从原始空间映射到更高维度的特征空间中，使得样本在升维后的特征空间内变得线性可分，例如图6.3中就是这样的。如果原始空间是有限维度，即属性数有限，那么一定存在更高维度特征空间使样本可分。</p>
+<p>令$\phi(\boldsymbol{x})$表示$x$映射后的特征向量，于是超平面可以表示为：<br>$$<br>f(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b<br>$$<br>其中$w$和$b$是模型的参数，使用有：<br>$$<br>\begin{array}{l}<br>\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^{2} \<br>\text { s.t. } y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>则其对偶问题为：<br>$$<br>\begin{array}{ll}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) \<br>\text { s.t. }  \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \<br> \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>求解上式会涉及到计算$\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) $，这是样本$x_i$与$x_j$映射到特征空间之后的内积，由于特征空间维度可能会很高甚至无穷维，因此计算$\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) $通常是很困难的，为了避开这个麻烦可以设这么一个函数：<br>$$<br>\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\left\langle\phi\left(\boldsymbol{x}<em>{i}\right), \phi\left(\boldsymbol{x}</em>{j}\right)\right\rangle=\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right)<br>$$<br>即用一个函数$\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)$来表示他们的内积，即跳过了他们高纬甚至无穷维特征空间中的内积，于是上面的对偶问题又可重写为：<br>$$<br>\begin{aligned}<br>\max <em>{\alpha} &amp; \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right) \<br>\text { s.t. } &amp; \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \<br>&amp; \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m<br>\end{aligned}<br>$$<br>求解后可以得到：<br>$$<br>\begin{aligned}<br>f(\boldsymbol{x}) &amp;=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b \<br>&amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi(\boldsymbol{x})+b \<br>&amp;=\sum</em>{i=1}^{m} \alpha_{i} y_{i} \kappa\left(\boldsymbol{x}, \boldsymbol{x}<em>{i}\right)+b<br>\end{aligned}<br>$$<br>这里的$\kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}_{j}\right)$​就是核函数（kernel function），上式的最优解可以通过训练样本的核函数展开，这一展示又称为”支持向量展式“(support vector expansion). 那么我们该如何选取好的核函数呢？</p>
+<p>核函数$\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)$是定义在$x *x$上的对称函数，则$\kappa$是当且仅当任意数据$D=\left{\boldsymbol{x}<em>{1}, \boldsymbol{x}</em>{2}, \ldots, \boldsymbol{x}<em>{m}\right}$，”核矩阵“K总是半正定的：<br>$$<br>\mathbf{K}=\left[\begin{array}{ccccc}<br>\kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{m}\right) \<br>\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{m}\right) \<br>\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}_{m}\right)<br>\end{array}\right]<br>$$<br>只要一个对称函数所对应的核矩阵半正定，它就能作为核函数使用</p>
+<p>我们希望样本在特征空间内线性可分，因此特征空间的好坏对支持向量机的性能至关重要。需注意的是，在不知道特征映射的形式时，我们并不知道什么样的核函数是合适的，而核函数也仅是隐式地定义了这个特征空间.于是，”核函数选择”成为支持向量机的最大变数.若核函数选择不合适，则意味着将样本映射到了一个不合适的特征空间，很可能导致性能不佳.<br>$$<br>\begin{array}{l}<br>\text { 常用核函数 }\<br>\begin{array}{lll}<br>\hline \text { 名称 } &amp; \text { 表达式 } &amp; \text { 参数 } \<br>\hline \text { 线性核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} &amp; \<br>\text { 多项式核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\left(\boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j}\right)^{d} &amp; d \geqslant 1 \text { 为多项式的次数 } \<br>\text { 高斯(径向基)核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\exp \left(-\frac{\left|\boldsymbol{x}<em>{i}-\boldsymbol{x}</em>{j}\right|^{2}}{2 \sigma^{2}}\right) &amp; \sigma&gt;0 \text { 为高斯核的带宽 }(\text { width }) . \<br>\text { 拉普拉斯核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\exp \left(-\frac{\left|\boldsymbol{x}<em>{i}-\boldsymbol{x}</em>{j}\right|}{\sigma}\right) &amp; \sigma&gt;0 \<br>\text { Sigmoid 核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\tanh \left(\beta \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j}+\theta\right) &amp; \tanh \text { 为双曲正切函数, } \beta&gt;0, \theta&lt;0 \<br>\hline<br>\end{array}<br>\end{array}<br>$$</p>
+<h2 id="SVM的代码实现"><a href="#SVM的代码实现" class="headerlink" title="SVM的代码实现"></a>SVM的代码实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets, svm</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_moons, make_circles, make_classification</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X, y = make_circles(noise=<span class="number">0.2</span>, factor=<span class="number">0.5</span>, random_state=<span class="number">1</span>);</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">X = StandardScaler().fit_transform(X)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line">cm = plt.cm.RdBu</span><br><span class="line">cm_bright = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">ax = plt.subplot()</span><br><span class="line"></span><br><span class="line">ax.set_title(<span class="string">&quot;Input data&quot;</span>)</span><br><span class="line"><span class="comment"># Plot the training points</span></span><br><span class="line">ax.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=cm_bright)</span><br><span class="line">ax.set_xticks(())</span><br><span class="line">ax.set_yticks(())</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">grid = GridSearchCV(SVC(), param_grid=&#123;<span class="string">&quot;C&quot;</span>:[<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">10</span>], <span class="string">&quot;gamma&quot;</span>: [<span class="number">1</span>, <span class="number">0.1</span>, <span class="number">0.01</span>]&#125;, cv=<span class="number">4</span>)</span><br><span class="line">grid.fit(X, y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The best parameters are %s with a score of %0.2f&quot;</span></span><br><span class="line">      % (grid.best_params_, grid.best_score_))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">x_min, x_max = X[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, X[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, X[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max,<span class="number">0.02</span>),</span><br><span class="line">                     np.arange(y_min, y_max, <span class="number">0.02</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, C <span class="keyword">in</span> <span class="built_in">enumerate</span>((<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">10</span>)):</span><br><span class="line">    <span class="keyword">for</span> j, gamma <span class="keyword">in</span> <span class="built_in">enumerate</span>((<span class="number">1</span>, <span class="number">0.1</span>, <span class="number">0.01</span>)):</span><br><span class="line">        plt.subplot()       </span><br><span class="line">        clf = SVC(C=C, gamma=gamma)</span><br><span class="line">        clf.fit(X,y)</span><br><span class="line">        Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Put the result into a color plot</span></span><br><span class="line">        Z = Z.reshape(xx.shape)</span><br><span class="line">        plt.contourf(xx, yy, Z, cmap=plt.cm.coolwarm, alpha=<span class="number">0.8</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot also the training points</span></span><br><span class="line">        plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.coolwarm)</span><br><span class="line"></span><br><span class="line">        plt.xlim(xx.<span class="built_in">min</span>(), xx.<span class="built_in">max</span>())</span><br><span class="line">        plt.ylim(yy.<span class="built_in">min</span>(), yy.<span class="built_in">max</span>())</span><br><span class="line">        plt.xticks(())</span><br><span class="line">        plt.yticks(())</span><br><span class="line">        plt.xlabel(<span class="string">&quot; gamma=&quot;</span> + <span class="built_in">str</span>(gamma) + <span class="string">&quot; C=&quot;</span> + <span class="built_in">str</span>(C))</span><br><span class="line">        plt.show()</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/AdaBoost%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/12/02/AdaBoost%E7%AE%97%E6%B3%95/" itemprop="url">ada</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T23:14:56+08:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="AdaBoost算法"><a href="#AdaBoost算法" class="headerlink" title="AdaBoost算法"></a>AdaBoost算法</h1><h2 id="强可学习和弱可学习的定义"><a href="#强可学习和弱可学习的定义" class="headerlink" title="强可学习和弱可学习的定义"></a>强可学习和弱可学习的定义</h2><ol>
+<li>强可学习说的是，在概率近似正确的PAC学习框架中，一个概念，如果存在一个多项式的学习算法去学习它，并且正确率很高，那么这个概念我们称之为强可学习的。</li>
+<li>一个概念，如果存在一个多项式的学习算法去学习它，但是它的正确率仅仅比随机猜测略好，那么我们称它为弱可学习的。</li>
+<li>在PAC学习的框架下，一个概念是强可学习的充要条件是这个概念是弱可学习。</li>
+</ol>
+<h2 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a>问题引出</h2><p>只要找到一个比随机猜测略好的弱学习算法就可以直接将其提升为强学习算法，而不必直接去找很难获得的强学习算法，也就是不需要直接寻找强学习算法，而是通过提升弱学习的方法使他达到强学习算法的目的。</p>
+<p>那么我们该如何实现弱学习转为强学习呢？</p>
+<p>答案是：如果A算法在a情况下失效，B算法在b情况下失效，那么我们可以在a情况下用B算法，同理我们可以在b情况下用A算法，以此来解决问题，也就是说我们可以通过某种方式将各种算法组合起来解决单一弱算法解决不了的问题，以此来提高正确率。</p>
+<p>那我们又面临两个问题了：</p>
+<ol>
+<li>怎么获得不同的弱分类器？</li>
+<li>怎么将这些弱分类器组合起来呢？</li>
+</ol>
+<p>对于问题1：我们可以使用不同的弱学习算法，有如参数估计，非参数估计等等；又或是使用相同的弱学习算法但选用不同的参数，比如K-means的K值，神经网络的隐藏层；还有输入对象的不同表示凸显事物不同的特征；或者使用不同的训练集。</p>
+<p>对于问题2：</p>
+<ol>
+<li>第一种是使用多专家组合，这是一种并行结构，例如随机森林，是多棵决策树平行投票表决的，然后输出最终的众数结果；</li>
+<li>第二种是多级组合，这是一种串行结构，其中下一个分类器，只对前一个分类器预测不准确的实例（即困难样本）进行训练和检测纠正。</li>
+</ol>
+<h2 id="AdaBoost算法原理"><a href="#AdaBoost算法原理" class="headerlink" title="AdaBoost算法原理"></a>AdaBoost算法原理</h2><h3 id="AdaBoost的解释"><a href="#AdaBoost的解释" class="headerlink" title="AdaBoost的解释"></a>AdaBoost的解释</h3><p>首先AdaBoost就是上面提到的多级组合,是一种串行结构。是一种前人栽树后人乘凉的算法。他由多个弱分类器组成，然后形成一个强分类器，对数据集的预测有泛化功能，准确性高。</p>
+<h3 id="AdaBoost算法需要解决的两个问题"><a href="#AdaBoost算法需要解决的两个问题" class="headerlink" title="AdaBoost算法需要解决的两个问题"></a>AdaBoost算法需要解决的两个问题</h3><ol>
+<li><p>每一轮如何改变训练数据的权值或者概率分布？</p>
+<p>AdaBoost：如何提高前一轮弱分类器错误分类样本的权值；降低正确分类样本的权值。</p>
+</li>
+<li><p>如何将若干个弱分类器组合成强分类器？</p>
+<p>AdaBoost：加权多数表决，加大分类误差率小的若分类器的权值，使其在分类表决时起较大的作用，减小分类误差率大的弱分类器的权值，使其在表决时起较小的作用。</p>
+</li>
+</ol>
+<h3 id="AdaBoost算法过程"><a href="#AdaBoost算法过程" class="headerlink" title="AdaBoost算法过程"></a>AdaBoost算法过程</h3><ol>
+<li><p>计算样本权重，有权重向量D，将权重向量D初始化为相等值，假设我们有n个训练集：<br>$$<br>\left{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \ldots,\left(x_{n}, y_{n}\right)\right}<br>$$<br>设定每个样本的权重都相等，则权重为$\frac{1}{n}$</p>
+</li>
+<li><p>计算错误率</p>
+<p>在训练集上训练出一个弱分类器，并计算分类器的错误率：<br>$$<br>\epsilon=\frac{分错的数量}{样本总数}<br>$$</p>
+</li>
+<li><p>计算弱分类器权重</p>
+<p>为当前分类器赋予权重值alpha，alpha的计算公式为：<br>$$<br>\alpha=\frac{1}{2} \ln \left(\frac{1-\epsilon}{\epsilon}\right)<br>$$</p>
+</li>
+<li><p>调整权重值</p>
+<p>根据上一次训练结果，调整权重值（上一次分对的权重降低，分错的权重增加）</p>
+<p>如果第i个样本被正确分类，则该样本权重更改为：<br>$$<br>D_{i}^{(t+1)}=\frac{D_{i}^{(t)} e^{-\alpha}}{\operatorname{Sum}(D)}<br>$$<br>如果第i个样本被分错，则该样本权重更改为：<br>$$<br>D_{i}^{(t+1)}=\frac{D_{i}^{(t)} e^{\alpha}}{\operatorname{Sum}(D)}<br>$$<br>之后，在同一数据集上再一次训练弱分类器，然后循环上述过程，直到训练错误率为0，或者弱分类器的数目达到</p>
+<p>指定值。</p>
+</li>
+</ol>
+<p>以上就是AdaBoost算法的步骤</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/02/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/12/02/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T22:47:15+08:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
