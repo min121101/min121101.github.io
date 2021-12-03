@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="SVM原理及代码先复习一下感知机 感知机的模型就是尝试找到一条直线，能够把二元数据隔离开。放到三维空间或者更高维的空间，感知机的模型就是尝试找到一个超平面，能够把所有的二元类别隔离开。   我们需要找到最优的$w^Tx+b&#x3D;0$使得该超平面分隔数据。  定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)&#x2F;||w||_2$ 固定$||w||2 &#x3D; 1$最终感知机">
+<meta name="description" content="SVM原理及代码先复习一下感知机 感知机的模型就是尝试找到一条直线，能够把二元数据隔离开。放到三维空间或者更高维的空间，感知机的模型就是尝试找到一个超平面，能够把所有的二元类别隔离开。   我们需要找到最优的$w^Tx+b&#x3D;0$使得该超平面分隔数据。  定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)&#x2F;||w||_2$ 固定$||w||_2 &#x3D; 1$最终感知">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Minmin">
-<meta property="og:url" content="http://minmin.com/2021/12/02/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:title" content="SVM原理及代码">
+<meta property="og:url" content="http://minmin.com/2021/12/03/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="Minmin">
-<meta property="og:description" content="SVM原理及代码先复习一下感知机 感知机的模型就是尝试找到一条直线，能够把二元数据隔离开。放到三维空间或者更高维的空间，感知机的模型就是尝试找到一个超平面，能够把所有的二元类别隔离开。   我们需要找到最优的$w^Tx+b&#x3D;0$使得该超平面分隔数据。  定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)&#x2F;||w||_2$ 固定$||w||2 &#x3D; 1$最终感知机">
+<meta property="og:description" content="SVM原理及代码先复习一下感知机 感知机的模型就是尝试找到一条直线，能够把二元数据隔离开。放到三维空间或者更高维的空间，感知机的模型就是尝试找到一个超平面，能够把所有的二元类别隔离开。   我们需要找到最优的$w^Tx+b&#x3D;0$使得该超平面分隔数据。  定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)&#x2F;||w||_2$ 固定$||w||_2 &#x3D; 1$最终感知">
 <meta property="og:locale">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/1042406/201611/1042406-20161124135616081-623185925.jpg">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/1042406/201611/1042406-20161124144326487-1331861308.jpg">
 <meta property="og:image" content="c:/Users/10474/AppData/Roaming/Typora/typora-user-images/image-20211127212844440.png">
-<meta property="article:published_time" content="2021-12-02T15:14:56.012Z">
-<meta property="article:modified_time" content="2021-11-27T14:14:28.674Z">
+<meta property="article:published_time" content="2021-12-03T03:06:13.000Z">
+<meta property="article:modified_time" content="2021-12-03T04:24:46.223Z">
 <meta property="article:author" content="Minmin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://images2015.cnblogs.com/blog/1042406/201611/1042406-20161124135616081-623185925.jpg">
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://minmin.com/2021/12/02/SVM原理及代码/"/>
+  <link rel="canonical" href="http://minmin.com/2021/12/03/SVM原理及代码/"/>
 
 
 
 
 
-  <title> | Minmin</title>
+  <title>SVM原理及代码 | Minmin</title>
   
 
 
@@ -251,12 +251,12 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-分类" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://minmin.com/2021/12/02/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://minmin.com/2021/12/03/SVM%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">SVM原理及代码</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-02T23:14:56+08:00">
-                2021-12-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-03T11:06:13+08:00">
+                2021-12-03
               </time>
             
 
@@ -330,7 +330,7 @@
 <p>我们需要找到最优的$w^Tx+b=0$使得该超平面分隔数据。</p>
 </li>
 <li><p>定义一下我们的损失函数$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)/||w||_2$</p>
-<p>固定$||w||<em>2 = 1$最终感知机的模型损失函数为：$\sum</em>{xi∈M}^{} −y(i)(w^T x(i)+b)$</p>
+<p>固定$||w||_2 = 1$最终感知机的模型损失函数为：$\sum_{xi∈M}^{} −y(i)(w^T x(i)+b)$</p>
 <p>优化上面的损失函数就可以找到最优的超平面来分隔开数据。</p>
 </li>
 </ul>
@@ -342,39 +342,120 @@
 <p>支持向量到超平面的距离为$\frac{1}{||w||_2} $,两个支持向量之间的距离为$\frac{2}{||w||_2} $。</p>
 </li>
 </ul>
-<h2 id="SVM模型目标函数与优化"><a href="#SVM模型目标函数与优化" class="headerlink" title="SVM模型目标函数与优化"></a>SVM模型目标函数与优化</h2><p>$$<br>\begin{aligned}<br>\max <em>{\boldsymbol{w}, b} &amp; \frac{2}{|\boldsymbol{w}|} \<br>\text { s.t. } &amp; y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{aligned}<br>$$</p>
-<p>上式就是我们要求解的最大化间隔的约束条件和公式，显然，为了最大化间隔隔，仅需最大化$|\boldsymbol{w}|^{-1}$ ，这等价于最小化$|\boldsymbol{w}|^{2}$，于是上式可以重写为：<br>$$<br>\begin{array}{l}<br>\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^{2} \<br>\text { s.t. } y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>这就是支持向量机的基本型。</p>
-<p>使用拉格朗日乘子法可得到其”对偶问题” (dual problem).具体来说，对上式的每条约束添加拉格朗日乘子$\alpha_{i} \geqslant 0$，则该问题的拉格朗日函数可写为：<br>$$<br>L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}|\boldsymbol{w}|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}<em>{i}+b\right)\right)<br>$$<br>其中$\boldsymbol{\alpha}=\left(\alpha</em>{1} ; \alpha_{2} ; \ldots ; \alpha_{m}\right)$，令$L(w,b,\boldsymbol{\alpha})$对$w$和$b$的偏导为零可得：<br>$$<br>\begin{aligned}<br>\boldsymbol{w} &amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}<em>{i} \<br>0 &amp;=\sum</em>{i=1}^{m} \alpha_{i} y_{i}<br>\end{aligned}<br>$$<br>再将上式代入该问题的拉格朗日函数可以得到SVM基本型的对偶问题：<br>$$<br>\begin{array}{l}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} \<br>\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \<br>\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .<br>\end{array}<br>$$<br>用SMO算法解出$\boldsymbol{\alpha}$后，求出$w$和$b$即可得到模型<br>$$<br>\begin{aligned}<br>f(\boldsymbol{x}) &amp;=\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}+b \<br>&amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}+b<br>\end{aligned}<br>$$<br>上述过程要满足上 KKT(Karush-Kuhn-Tucker) 条件，即要求：<br>$$<br>\left{\begin{array}{l}<br>\alpha</em>{i} \geqslant 0 \<br>y_{i} f\left(\boldsymbol{x}<em>{i}\right)-1 \geqslant 0 \<br>\alpha</em>{i}\left(y_{i} f\left(\boldsymbol{x}_{i}\right)-1\right)=0<br>\end{array}\right.<br>$$</p>
-<p>求解的过程复杂繁琐，为了节省时间，人们通过利用问题本身的特性，提出了很多高效算法， SMO (Sequential Minimal Optimization) 是其中一个著名的代表</p>
+<h2 id="SVM模型目标函数与优化"><a href="#SVM模型目标函数与优化" class="headerlink" title="SVM模型目标函数与优化"></a>SVM模型目标函数与优化</h2><script type="math/tex; mode=display">
+\begin{aligned}
+\max _{\boldsymbol{w}, b} & \frac{2}{\|\boldsymbol{w}\|} \\
+\text { s.t. } & y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m
+\end{aligned}</script><p>上式就是我们要求解的最大化间隔的约束条件和公式，显然，为了最大化间隔隔，仅需最大化$|\boldsymbol{w}|^{-1}$ ，这等价于最小化$|\boldsymbol{w}|^{2}$，于是上式可以重写为：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^{2} \\
+\text { s.t. } y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right) \geqslant 1, \quad i=1,2, \ldots, m
+\end{array}</script><p>这就是支持向量机的基本型。</p>
+<p>使用拉格朗日乘子法可得到其”对偶问题” (dual problem).具体来说，对上式的每条约束添加拉格朗日乘子$\alpha_{i} \geqslant 0$，则该问题的拉格朗日函数可写为：</p>
+<script type="math/tex; mode=display">
+L(\boldsymbol{w}, b, \boldsymbol{\alpha})=\frac{1}{2}\|\boldsymbol{w}\|^{2}+\sum_{i=1}^{m} \alpha_{i}\left(1-y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}_{i}+b\right)\right)</script><p>其中$\boldsymbol{\alpha}=\left(\alpha_{1} ; \alpha_{2} ; \ldots ; \alpha_{m}\right)$，令$L(w,b,\boldsymbol{\alpha})$对$w$和$b$的偏导为零可得：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{w} &=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}_{i} \\
+0 &=\sum_{i=1}^{m} \alpha_{i} y_{i}
+\end{aligned}</script><p>再将上式代入该问题的拉格朗日函数可以得到SVM基本型的对偶问题：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\max _{\alpha} \sum_{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j} \\
+\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \\
+\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .
+\end{array}</script><p>用SMO算法解出$\boldsymbol{\alpha}$后，求出$w$和$b$即可得到模型</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(\boldsymbol{x}) &=\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}+b \\
+&=\sum_{i=1}^{m} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}+b
+\end{aligned}</script><p>上述过程要满足上 KKT(Karush-Kuhn-Tucker) 条件，即要求：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+\alpha_{i} \geqslant 0 \\
+y_{i} f\left(\boldsymbol{x}_{i}\right)-1 \geqslant 0 \\
+\alpha_{i}\left(y_{i} f\left(\boldsymbol{x}_{i}\right)-1\right)=0
+\end{array}\right.</script><p>求解的过程复杂繁琐，为了节省时间，人们通过利用问题本身的特性，提出了很多高效算法， SMO (Sequential Minimal Optimization) 是其中一个著名的代表</p>
 <ul>
 <li><p>SMO 的基本思路是先固定$\alpha_{i}$之外的所有参数，然后求$\alpha_{i}$上的极值。由于存在约束$\sum_{i=1}^{m} \alpha_{i} y_{i}=0$，若固定$\alpha_{i}$之外的其他变量，则$\alpha_{i}$可由其他变量导出。于是SMO每次选择两个变量$\alpha_{i}$和$\alpha_{j}$，并固定其他参数，这样在参数初始化后不断执行如下两个步骤直至收敛：</p>
 <ol>
 <li><p>选取一对需要更新的变量$\alpha_{i}$和$\alpha_{j}$，为什么选两个因为他们之间仍然存在关系可以代换，于是n个参数的更新就可以退化为求解一个参数更新两个函数的问题。</p>
 </li>
-<li><p>固定$\alpha_{i}$和$\alpha_{j}$以外的函数，继续求解：<br>$$<br>\begin{array}{l}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} \<br>\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \<br>\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .<br>\end{array}<br>$$</p>
-</li>
+<li><p>固定$\alpha_{i}$和$\alpha_{j}$以外的函数，继续求解：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\max _{\alpha} \sum_{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j} \\
+\text { s.t. } \quad \sum_{i=1}^{m} \alpha_{i} y_{i}=0, \\
+\quad \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m .
+\end{array}</script></li>
 </ol>
 </li>
 </ul>
 <p>SMO算法之所以高效，是由于在固定其他参数后，仅优化两个参数的过程能做到非常高效，具体来说，仅考虑$\alpha_{i}$和$\alpha_{j}$时上式可以重写为$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c, \quad \alpha_{i} \geqslant 0, \quad \alpha_{j} \geqslant 0$</p>
 <p>其中$c=-\sum_{k \neq i, j} \alpha_{k} y_{k}$是使得$\sum_{i=1}^{m} \alpha_{i} y_{i}=0$成立的常数，用$\alpha_{i} y_{i}+\alpha_{j} y_{j}=c$消去$\alpha_{j}$，则可以得到一个关于$\alpha_{i}$的单变量二次规划问题，仅有的约束是$\alpha_{i} \geqslant 0$,很容易发现这样的二次规划问题具有闭式解，于是不必调用数值优化算法即可高效的计算出更新后的$\alpha_{i}$和$\alpha_{j}$</p>
-<p>关于确定偏移项$b$，要知对于任意的支持向量$(x_s,y_s)$都有$y_sf(x_s)=1$即：<br>$$<br>y_{s}\left(\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{s}+b\right)=1<br>$$<br>其中$S=\left{i \mid \alpha_{i}&gt;0, i=1,2, \ldots, m\right}$为所有支持向量的下标集，理论上，可选取任意支持向量求解上式来获得b，但实际上有一种更优的方法:也就是使用所有支持向量求解的平均值<br>$$<br>b=\frac{1}{|S|} \sum_{s \in S}\left(y_{s}-\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{s}\right)<br>$$</p>
-<h2 id="SVM的法宝——核函数"><a href="#SVM的法宝——核函数" class="headerlink" title="SVM的法宝——核函数"></a>SVM的法宝——核函数</h2><p>在本章前面的讨论中，我们假设训练样本是线性可分的，即存在一个划分超平面能将训练样本正确分类。然而在现实任务中，原始样本空间内也许并不存在一个能正确划分两类样本的超平面。例如图 6.3 中的“异或“问题就不是线性可分的。</p>
+<p>关于确定偏移项$b$，要知对于任意的支持向量$(x_s,y_s)$都有$y_sf(x_s)=1$即：</p>
+<script type="math/tex; mode=display">
+y_{s}\left(\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{s}+b\right)=1</script><p>其中$S=\left\{i \mid \alpha_{i}&gt;0, i=1,2, \ldots, m\right\}$为所有支持向量的下标集，理论上，可选取任意支持向量求解上式来获得b，但实际上有一种更优的方法:也就是使用所有支持向量求解的平均值</p>
+<script type="math/tex; mode=display">
+b=\frac{1}{|S|} \sum_{s \in S}\left(y_{s}-\sum_{i \in S} \alpha_{i} y_{i} \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{s}\right)</script><h2 id="SVM的法宝——核函数"><a href="#SVM的法宝——核函数" class="headerlink" title="SVM的法宝——核函数"></a>SVM的法宝——核函数</h2><p>在本章前面的讨论中，我们假设训练样本是线性可分的，即存在一个划分超平面能将训练样本正确分类。然而在现实任务中，原始样本空间内也许并不存在一个能正确划分两类样本的超平面。例如图 6.3 中的“异或“问题就不是线性可分的。</p>
 <p><img src="C:\Users\10474\AppData\Roaming\Typora\typora-user-images\image-20211127212844440.png" alt="image-20211127212844440"></p>
 <p>这样可以将样本从原始空间映射到更高维度的特征空间中，使得样本在升维后的特征空间内变得线性可分，例如图6.3中就是这样的。如果原始空间是有限维度，即属性数有限，那么一定存在更高维度特征空间使样本可分。</p>
-<p>令$\phi(\boldsymbol{x})$表示$x$映射后的特征向量，于是超平面可以表示为：<br>$$<br>f(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b<br>$$<br>其中$w$和$b$是模型的参数，使用有：<br>$$<br>\begin{array}{l}<br>\min <em>{\boldsymbol{w}, b} \frac{1}{2}|\boldsymbol{w}|^{2} \<br>\text { s.t. } y</em>{i}\left(\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b\right) \geqslant 1, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>则其对偶问题为：<br>$$<br>\begin{array}{ll}<br>\max <em>{\alpha} \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) \<br>\text { s.t. }  \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \<br> \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m<br>\end{array}<br>$$<br>求解上式会涉及到计算$\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) $，这是样本$x_i$与$x_j$映射到特征空间之后的内积，由于特征空间维度可能会很高甚至无穷维，因此计算$\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right) $通常是很困难的，为了避开这个麻烦可以设这么一个函数：<br>$$<br>\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\left\langle\phi\left(\boldsymbol{x}<em>{i}\right), \phi\left(\boldsymbol{x}</em>{j}\right)\right\rangle=\phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}</em>{j}\right)<br>$$<br>即用一个函数$\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)$来表示他们的内积，即跳过了他们高纬甚至无穷维特征空间中的内积，于是上面的对偶问题又可重写为：<br>$$<br>\begin{aligned}<br>\max <em>{\alpha} &amp; \sum</em>{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right) \<br>\text { s.t. } &amp; \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \<br>&amp; \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m<br>\end{aligned}<br>$$<br>求解后可以得到：<br>$$<br>\begin{aligned}<br>f(\boldsymbol{x}) &amp;=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b \<br>&amp;=\sum_{i=1}^{m} \alpha_{i} y_{i} \phi\left(\boldsymbol{x}<em>{i}\right)^{\mathrm{T}} \phi(\boldsymbol{x})+b \<br>&amp;=\sum</em>{i=1}^{m} \alpha_{i} y_{i} \kappa\left(\boldsymbol{x}, \boldsymbol{x}<em>{i}\right)+b<br>\end{aligned}<br>$$<br>这里的$\kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}_{j}\right)$​就是核函数（kernel function），上式的最优解可以通过训练样本的核函数展开，这一展示又称为”支持向量展式“(support vector expansion). 那么我们该如何选取好的核函数呢？</p>
-<p>核函数$\kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)$是定义在$x *x$上的对称函数，则$\kappa$是当且仅当任意数据$D=\left{\boldsymbol{x}<em>{1}, \boldsymbol{x}</em>{2}, \ldots, \boldsymbol{x}<em>{m}\right}$，”核矩阵“K总是半正定的：<br>$$<br>\mathbf{K}=\left[\begin{array}{ccccc}<br>\kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{1}, \boldsymbol{x}<em>{m}\right) \<br>\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{i}, \boldsymbol{x}<em>{m}\right) \<br>\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}<em>{1}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}<em>{j}\right) &amp; \cdots &amp; \kappa\left(\boldsymbol{x}</em>{m}, \boldsymbol{x}_{m}\right)<br>\end{array}\right]<br>$$<br>只要一个对称函数所对应的核矩阵半正定，它就能作为核函数使用</p>
-<p>我们希望样本在特征空间内线性可分，因此特征空间的好坏对支持向量机的性能至关重要。需注意的是，在不知道特征映射的形式时，我们并不知道什么样的核函数是合适的，而核函数也仅是隐式地定义了这个特征空间.于是，”核函数选择”成为支持向量机的最大变数.若核函数选择不合适，则意味着将样本映射到了一个不合适的特征空间，很可能导致性能不佳.<br>$$<br>\begin{array}{l}<br>\text { 常用核函数 }\<br>\begin{array}{lll}<br>\hline \text { 名称 } &amp; \text { 表达式 } &amp; \text { 参数 } \<br>\hline \text { 线性核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j} &amp; \<br>\text { 多项式核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\left(\boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j}\right)^{d} &amp; d \geqslant 1 \text { 为多项式的次数 } \<br>\text { 高斯(径向基)核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\exp \left(-\frac{\left|\boldsymbol{x}<em>{i}-\boldsymbol{x}</em>{j}\right|^{2}}{2 \sigma^{2}}\right) &amp; \sigma&gt;0 \text { 为高斯核的带宽 }(\text { width }) . \<br>\text { 拉普拉斯核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\exp \left(-\frac{\left|\boldsymbol{x}<em>{i}-\boldsymbol{x}</em>{j}\right|}{\sigma}\right) &amp; \sigma&gt;0 \<br>\text { Sigmoid 核 } &amp; \kappa\left(\boldsymbol{x}<em>{i}, \boldsymbol{x}</em>{j}\right)=\tanh \left(\beta \boldsymbol{x}<em>{i}^{\mathrm{T}} \boldsymbol{x}</em>{j}+\theta\right) &amp; \tanh \text { 为双曲正切函数, } \beta&gt;0, \theta&lt;0 \<br>\hline<br>\end{array}<br>\end{array}<br>$$</p>
-<h2 id="SVM的代码实现"><a href="#SVM的代码实现" class="headerlink" title="SVM的代码实现"></a>SVM的代码实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets, svm</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_moons, make_circles, make_classification</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
-
+<p>令$\phi(\boldsymbol{x})$表示$x$映射后的特征向量，于是超平面可以表示为：</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol{x})=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b</script><p>其中$w$和$b$是模型的参数，使用有：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\min _{\boldsymbol{w}, b} \frac{1}{2}\|\boldsymbol{w}\|^{2} \\
+\text { s.t. } y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b\right) \geqslant 1, \quad i=1,2, \ldots, m
+\end{array}</script><p>则其对偶问题为： </p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+\max _{\alpha} \sum_{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}_{j}\right) \\
+\text { s.t. }  \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \\
+ \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m
+\end{array}</script><p>求解上式会涉及到计算$\phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}_{j}\right) $，这是样本$x_i$与$x_j$映射到特征空间之后的内积，由于特征空间维度可能会很高甚至无穷维，因此计算$\phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}_{j}\right) $通常是很困难的，为了避开这个麻烦可以设这么一个函数：</p>
+<script type="math/tex; mode=display">
+\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\left\langle\phi\left(\boldsymbol{x}_{i}\right), \phi\left(\boldsymbol{x}_{j}\right)\right\rangle=\phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}_{j}\right)</script><p>即用一个函数$\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)$来表示他们的内积，即跳过了他们高纬甚至无穷维特征空间中的内积，于是上面的对偶问题又可重写为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max _{\alpha} & \sum_{i=1}^{m} \alpha_{i}-\frac{1}{2} \sum_{i=1}^{m} \sum_{j=1}^{m} \alpha_{i} \alpha_{j} y_{i} y_{j} \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right) \\
+\text { s.t. } & \sum_{i=1}^{m} \alpha_{i} y_{i}=0 \\
+& \alpha_{i} \geqslant 0, \quad i=1,2, \ldots, m
+\end{aligned}</script><p>求解后可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f(\boldsymbol{x}) &=\boldsymbol{w}^{\mathrm{T}} \phi(\boldsymbol{x})+b \\
+&=\sum_{i=1}^{m} \alpha_{i} y_{i} \phi\left(\boldsymbol{x}_{i}\right)^{\mathrm{T}} \phi(\boldsymbol{x})+b \\
+&=\sum_{i=1}^{m} \alpha_{i} y_{i} \kappa\left(\boldsymbol{x}, \boldsymbol{x}_{i}\right)+b
+\end{aligned}</script><p>这里的$\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)$​就是核函数（kernel function），上式的最优解可以通过训练样本的核函数展开，这一展示又称为”支持向量展式“(support vector expansion). 那么我们该如何选取好的核函数呢？</p>
+<p>核函数$\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)$是定义在$x *x$上的对称函数，则$\kappa$是当且仅当任意数据$D=\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right\}$，”核矩阵“K总是半正定的：</p>
+<script type="math/tex; mode=display">
+\mathbf{K}=\left[\begin{array}{ccccc}
+\kappa\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{1}\right) & \cdots & \kappa\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{j}\right) & \cdots & \kappa\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{m}\right) \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{1}\right) & \cdots & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right) & \cdots & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{m}\right) \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\kappa\left(\boldsymbol{x}_{m}, \boldsymbol{x}_{1}\right) & \cdots & \kappa\left(\boldsymbol{x}_{m}, \boldsymbol{x}_{j}\right) & \cdots & \kappa\left(\boldsymbol{x}_{m}, \boldsymbol{x}_{m}\right)
+\end{array}\right]</script><p>只要一个对称函数所对应的核矩阵半正定，它就能作为核函数使用</p>
+<p>我们希望样本在特征空间内线性可分，因此特征空间的好坏对支持向量机的性能至关重要。需注意的是，在不知道特征映射的形式时，我们并不知道什么样的核函数是合适的，而核函数也仅是隐式地定义了这个特征空间.于是，”核函数选择”成为支持向量机的最大变数.若核函数选择不合适，则意味着将样本映射到了一个不合适的特征空间，很可能导致性能不佳.</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+\text { 常用核函数 }\\
+\begin{array}{lll}
+\hline \text { 名称 } & \text { 表达式 } & \text { 参数 } \\
+\hline \text { 线性核 } & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j} & \\
+\text { 多项式核 } & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\left(\boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j}\right)^{d} & d \geqslant 1 \text { 为多项式的次数 } \\
+\text { 高斯(径向基)核 } & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_{i}-\boldsymbol{x}_{j}\right\|^{2}}{2 \sigma^{2}}\right) & \sigma>0 \text { 为高斯核的带宽 }(\text { width }) . \\
+\text { 拉普拉斯核 } & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\exp \left(-\frac{\left\|\boldsymbol{x}_{i}-\boldsymbol{x}_{j}\right\|}{\sigma}\right) & \sigma>0 \\
+\text { Sigmoid 核 } & \kappa\left(\boldsymbol{x}_{i}, \boldsymbol{x}_{j}\right)=\tanh \left(\beta \boldsymbol{x}_{i}^{\mathrm{T}} \boldsymbol{x}_{j}+\theta\right) & \tanh \text { 为双曲正切函数, } \beta>0, \theta<0 \\
+\hline
+\end{array}
+\end{array}</script><h2 id="SVM的代码实现"><a href="#SVM的代码实现" class="headerlink" title="SVM的代码实现"></a>SVM的代码实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets, svm</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_moons, make_circles, make_classification</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X, y = make_circles(noise=<span class="number">0.2</span>, factor=<span class="number">0.5</span>, random_state=<span class="number">1</span>);</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">X = StandardScaler().fit_transform(X)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line">cm = plt.cm.RdBu</span><br><span class="line">cm_bright = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">ax = plt.subplot()</span><br><span class="line"></span><br><span class="line">ax.set_title(<span class="string">&quot;Input data&quot;</span>)</span><br><span class="line"><span class="comment"># Plot the training points</span></span><br><span class="line">ax.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=cm_bright)</span><br><span class="line">ax.set_xticks(())</span><br><span class="line">ax.set_yticks(())</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">grid = GridSearchCV(SVC(), param_grid=&#123;<span class="string">&quot;C&quot;</span>:[<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">10</span>], <span class="string">&quot;gamma&quot;</span>: [<span class="number">1</span>, <span class="number">0.1</span>, <span class="number">0.01</span>]&#125;, cv=<span class="number">4</span>)</span><br><span class="line">grid.fit(X, y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The best parameters are %s with a score of %0.2f&quot;</span></span><br><span class="line">      % (grid.best_params_, grid.best_score_))</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">x_min, x_max = X[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, X[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">y_min, y_max = X[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, X[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">xx, yy = np.meshgrid(np.arange(x_min, x_max,<span class="number">0.02</span>),</span><br><span class="line">                     np.arange(y_min, y_max, <span class="number">0.02</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, C <span class="keyword">in</span> <span class="built_in">enumerate</span>((<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">10</span>)):</span><br><span class="line">    <span class="keyword">for</span> j, gamma <span class="keyword">in</span> <span class="built_in">enumerate</span>((<span class="number">1</span>, <span class="number">0.1</span>, <span class="number">0.01</span>)):</span><br><span class="line">        plt.subplot()       </span><br><span class="line">        clf = SVC(C=C, gamma=gamma)</span><br><span class="line">        clf.fit(X,y)</span><br><span class="line">        Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Put the result into a color plot</span></span><br><span class="line">        Z = Z.reshape(xx.shape)</span><br><span class="line">        plt.contourf(xx, yy, Z, cmap=plt.cm.coolwarm, alpha=<span class="number">0.8</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot also the training points</span></span><br><span class="line">        plt.scatter(X[:, <span class="number">0</span>], X[:, <span class="number">1</span>], c=y, cmap=plt.cm.coolwarm)</span><br><span class="line"></span><br><span class="line">        plt.xlim(xx.<span class="built_in">min</span>(), xx.<span class="built_in">max</span>())</span><br><span class="line">        plt.ylim(yy.<span class="built_in">min</span>(), yy.<span class="built_in">max</span>())</span><br><span class="line">        plt.xticks(())</span><br><span class="line">        plt.yticks(())</span><br><span class="line">        plt.xlabel(<span class="string">&quot; gamma=&quot;</span> + <span class="built_in">str</span>(gamma) + <span class="string">&quot; C=&quot;</span> + <span class="built_in">str</span>(C))</span><br><span class="line">        plt.show()</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -399,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/12/02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2021/12/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LDA(%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95)/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -409,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/12/02/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-LDA(%E7%BA%BF%E6%80%A7%E5%88%A4%E5%88%AB%E9%99%8D%E7%BB%B4%E7%AE%97%E6%B3%95)/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/12/03/%E5%86%B3%E7%AD%96%E6%A0%91%E5%8E%9F%E7%90%86%E6%8E%A8%E5%AF%BC/" rel="prev" title="分类">
+                分类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -488,7 +569,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -732,6 +813,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
